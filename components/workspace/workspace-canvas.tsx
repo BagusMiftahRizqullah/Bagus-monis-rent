@@ -6,7 +6,6 @@ import { useDroppable } from '@dnd-kit/core';
 import { useWorkspaceStore } from '@/store/workspace';
 import { desks, chairs, getProductById } from '@/data/products';
 import { WorkspaceItem } from './workspace-item';
-import { GlassPanel } from '@/components/ui/glass-panel';
 
 export function WorkspaceCanvas() {
   const selectedDesk = useWorkspaceStore((s) => s.selectedDesk);
@@ -45,7 +44,7 @@ export function WorkspaceCanvas() {
   if (!isHydrated) return null;
 
   return (
-    <GlassPanel className="relative flex h-full w-full items-center justify-center overflow-hidden !p-0" animate={false}>
+    <div className="relative flex h-full w-full items-center justify-center overflow-hidden !p-0">
       <div ref={setNodeRef} className="absolute inset-0 z-0" />
       
       {/* Global Background Overlay for Empty State */}
@@ -117,6 +116,6 @@ export function WorkspaceCanvas() {
               </div>
             ))}
           </AnimatePresence>
-      </GlassPanel>
+    </div>
   );
 }

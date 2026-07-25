@@ -151,7 +151,7 @@ export function Sidebar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={toggleSidebar}
-              className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-40 bg-black/40 md:hidden"
             />
 
             {/* Mobile Bottom Sheet Panel */}
@@ -160,7 +160,7 @@ export function Sidebar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: "100%" }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-x-0 bottom-0 z-50 md:hidden h-[75vh] rounded-t-3xl border-t border-zinc-200/60 bg-[#f7f5f0]/95 shadow-2xl backdrop-blur-2xl dark:border-white/10 dark:bg-zinc-900/95 overflow-hidden flex flex-col"
+              className="fixed inset-x-0 bottom-0 z-50 md:hidden h-[75vh] rounded-t-3xl border-t border-zinc-200/60 bg-[#f7f5f0] shadow-2xl dark:border-white/10 dark:bg-zinc-900 overflow-hidden flex flex-col"
             >
               {/* Drag Handle & Header */}
               <div className="flex flex-col items-center pt-3 pb-2 border-b border-zinc-200/50 dark:border-white/10 shrink-0">

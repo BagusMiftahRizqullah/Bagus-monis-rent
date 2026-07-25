@@ -76,7 +76,7 @@ export function CheckoutPanel() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/40"
               onClick={handleCloseModal}
             />
             <motion.div
@@ -120,7 +120,7 @@ export function CheckoutPanel() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-black/20"
             onClick={toggleCheckout}
           />
         )}
@@ -135,7 +135,7 @@ export function CheckoutPanel() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: 400, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed right-0 top-0 z-50 flex h-full w-full max-w-md flex-col border-l border-white/20 bg-white/95 shadow-2xl backdrop-blur-xl dark:bg-zinc-900/95 dark:border-white/10"
+            className="fixed right-0 top-0 z-50 flex h-full w-full max-w-md flex-col border-l border-zinc-200 bg-white shadow-2xl dark:bg-zinc-900 dark:border-zinc-800"
           >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-zinc-200/50 px-6 py-4 dark:border-white/10 pt-12 md:pt-4">

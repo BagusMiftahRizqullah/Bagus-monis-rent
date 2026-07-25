@@ -5,7 +5,7 @@ import { ZoneSidebar } from '@/components/sidebar/zone-sidebar';
 import { WorkspaceCanvas } from '@/components/workspace/workspace-canvas';
 import { LifestyleZones } from '@/components/workspace/lifestyle-zones';
 import { CheckoutPanel } from '@/components/checkout/checkout-panel';
-import { DndContext, PointerSensor, useSensor, useSensors, type DragEndEvent, type DragStartEvent, DragOverlay, defaultDropAnimationSideEffects } from '@dnd-kit/core';
+import { DndContext, MouseSensor, TouchSensor, useSensor, useSensors, type DragEndEvent, type DragStartEvent, DragOverlay, defaultDropAnimationSideEffects } from '@dnd-kit/core';
 import { useWorkspaceStore } from '@/store/workspace';
 import { desks, chairs, accessories, monitors, products } from '@/data/products';
 import { FurnitureCard } from '@/components/sidebar/furniture-card';
@@ -63,9 +63,12 @@ export function WorkspaceLayout() {
   }, [selectedDesk, selectedChair, workspaceAccessories, zoneItems]);
 
   const sensors = useSensors(
-    useSensor(PointerSensor, {
+    useSensor(MouseSensor, {
       activationConstraint: { distance: 8 },
     }),
+    useSensor(TouchSensor, {
+      activationConstraint: { delay: 100, tolerance: 8 },
+    })
   );
 
   function handleDragStart(event: DragStartEvent) {

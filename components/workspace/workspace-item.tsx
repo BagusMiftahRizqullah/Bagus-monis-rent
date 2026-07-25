@@ -52,8 +52,6 @@ export function WorkspaceItem({
       animate={{
         opacity: 1,
         scale: isDragging ? 1.05 : scale,
-        x: dragTransform.x,
-        y: dragTransform.y,
       }}
       exit={{ opacity: 0, scale: 0.8 }}
       transition={{ type: 'spring', stiffness: 300, damping: 25 }}
@@ -61,7 +59,9 @@ export function WorkspaceItem({
         position: centered ? 'relative' : 'absolute',
         left: centered ? undefined : 0,
         top: centered ? undefined : 0,
-        rotate: `${rotation}deg`,
+        x: dragTransform.x,
+        y: dragTransform.y,
+        rotate: rotation,
         zIndex: isDragging ? 999 : zIndex,
         cursor: isDragging ? 'grabbing' : 'grab',
       }}
@@ -83,6 +83,7 @@ export function WorkspaceItem({
           fill
           className="object-contain"
           sizes={product.category === 'desk' ? '600px' : product.category === 'chair' ? '180px' : '80px'}
+          priority={product.category === 'desk' || product.category === 'chair'}
         />
 
         {/* Label */}
