@@ -212,7 +212,7 @@ export function CheckoutPanel() {
                       <PriceRow label="Refundable Deposit" value={formatPrice(checkout.deposit)} />
                       <hr className="border-zinc-200/50 dark:border-white/10" />
                       <PriceRow
-                        label="Monthly Total"
+                        label="Total"
                         value={formatPrice(checkout.grandTotal)}
                         highlight
                       />
@@ -237,7 +237,7 @@ export function CheckoutPanel() {
                   onClick={handleCheckout}
                   className="w-full rounded-xl bg-zinc-800 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-zinc-500/25 transition-all hover:bg-zinc-700 active:scale-[0.98] dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200 dark:shadow-zinc-300/25"
                 >
-                  Rent Workspace — {formatPrice(checkout.grandTotal)}/mo
+                  Rent Workspace — {formatPrice(checkout.grandTotal)}
                 </button>
                 <p className="mt-2 text-center text-[11px] text-zinc-400 dark:text-zinc-500">
                   Free delivery &bull; Setup included &bull; Cancel anytime
