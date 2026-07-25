@@ -271,7 +271,7 @@ export function WorkspaceLayout() {
               <div className="flex items-center gap-3 opacity-0 w-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:w-auto group-hover:translate-x-0 whitespace-nowrap pl-1 overflow-hidden">
                 {cartItemCount > 0 && (
                   <span className="text-sm font-bold text-zinc-800 dark:text-zinc-200">
-                    {formatPrice(cartTotal)}/mo
+                    {formatPrice(cartTotal)}
                   </span>
                 )}
                 <span className="text-xs font-medium text-zinc-400 dark:text-zinc-500 mr-1">
